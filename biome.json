@@ -8,6 +8,7 @@
   "files": {
     "ignoreUnknown": false,
     "ignore": [
+      ".next",
       "node_modules",
       "dist",
       "build",
@@ -31,7 +32,8 @@
   },
   "javascript": {
     "formatter": {
-      "quoteStyle": "double"
+      "quoteStyle": "double",
+      "lineWidth": 79
     }
   }
 }
