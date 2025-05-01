@@ -26,7 +26,7 @@ A modern, feature-rich boilerplate for NextJS applications with built-in linting
 #### Option 1: Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/nextjs_boilerplate.git my-project
+git clone https://github.com/degu-io/nextjs_boilerplate.git my-project
 cd my-project
 pnpm install
 ```
@@ -34,7 +34,7 @@ pnpm install
 #### Option 2: Using degit
 
 ```bash
-npx degit yourusername/nextjs_boilerplate my-project
+npx degit degu-io/nextjs_boilerplate my-project
 cd my-project
 pnpm install
 ```
@@ -42,7 +42,7 @@ pnpm install
 #### Option 3: Using the template directly
 
 ```bash
-pnpm create next-app --example https://github.com/yourusername/nextjs_boilerplate my-project
+pnpm create next-app --example https://github.com/degu-io/nextjs_boilerplate my-project
 ```
 
 ### Development
