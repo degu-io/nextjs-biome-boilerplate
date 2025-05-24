@@ -1,5 +1,10 @@
 import Image from "next/image";
 
+/**
+ * Renders the home page for the Next.js boilerplate, including an overview, features, setup instructions, project structure, customization options, contribution guidelines, and acknowledgments.
+ *
+ * @returns The complete homepage layout as a React element.
+ */
 export default function Home() {
   return (
     <div className="grid grid-rows-[auto_1fr_auto] items-center min-h-screen p-8 pb-20 gap-8 sm:p-20 font-[family-name:var(--font-geist-sans)]">
@@ -28,7 +33,7 @@ export default function Home() {
           </p>
 
           <h2 className="text-2xl font-bold mt-8 mb-4">Features</h2>
-          <ul className="list-disc pl-6 space-y-2">
+          <ul className="list-disc pl-6 space-y-2" data-testid="features">
             <li>
               <strong>Next.js 15</strong> - The React framework for production
             </li>
@@ -43,15 +48,14 @@ export default function Home() {
               <strong>TailwindCSS 4</strong> - A utility-first CSS framework
             </li>
             <li>
-              <strong>Biome</strong> - Fast linter and formatter for
-              JavaScript, TypeScript, JSX, and more
+              <strong>Biome</strong> - Fast linter and formatter for JavaScript,
+              TypeScript, JSX, and more
             </li>
             <li>
               <strong>Lefthook</strong> - Git hooks manager
             </li>
             <li>
-              <strong>PNPM</strong> - Fast, disk space efficient package
-              manager
+              <strong>PNPM</strong> - Fast, disk space efficient package manager
             </li>
             <li>
               <strong>Turbopack</strong> - Incremental bundler for development
@@ -59,6 +63,13 @@ export default function Home() {
             <li>
               <strong>Geist Fonts</strong> - Beautiful, modern typeface by
               Vercel
+            </li>
+            <li>
+              <strong>Vitest</strong> - Fast unit/integration testing framework
+            </li>
+            <li>
+              <strong>@testing-library/react</strong> - Simple and complete
+              React DOM testing utilities
             </li>
           </ul>
 
@@ -73,7 +84,7 @@ export default function Home() {
               >
                 Node.js
               </a>{" "}
-              (v18 or newer)
+              (v22 or newer)
             </li>
             <li>
               <a
@@ -161,6 +172,31 @@ export default function Home() {
             </code>
           </pre>
 
+          <h3 className="text-xl font-semibold mt-6 mb-3">Testing</h3>
+          <p>Run tests with Vitest and @testing-library/react:</p>
+          <pre className="bg-gray-100 dark:bg-gray-800 p-4 rounded-md overflow-x-auto">
+            <code className="font-mono text-sm">pnpm test</code>
+          </pre>
+          <p>For the interactive UI:</p>
+          <pre className="bg-gray-100 dark:bg-gray-800 p-4 rounded-md overflow-x-auto">
+            <code className="font-mono text-sm">pnpm test:ui</code>
+          </pre>
+          <p>To check coverage:</p>
+          <pre className="bg-gray-100 dark:bg-gray-800 p-4 rounded-md overflow-x-auto">
+            <code className="font-mono text-sm">pnpm test:coverage</code>
+          </pre>
+          <p>
+            Test files are located in the{" "}
+            <code className="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">
+              test/
+            </code>{" "}
+            directory. See{" "}
+            <code className="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">
+              test/home.test.tsx
+            </code>{" "}
+            for an example.
+          </p>
+
           <h2 className="text-2xl font-bold mt-8 mb-4">Project Structure</h2>
           <pre className="bg-gray-100 dark:bg-gray-800 p-4 rounded-md overflow-x-auto">
             <code className="font-mono text-sm">
@@ -168,17 +204,26 @@ export default function Home() {
               ├── public/ # Static assets{"\n"}
               ├── src/{"\n"}│ ├── app/ # App router pages and layouts{"\n"}│ │
               ├── globals.css # Global styles{"\n"}│ │ ├── layout.tsx # Root
-              layout{"\n"}│ │ └── page.tsx # Home page{"\n"}│ └── lib/ #
-              Utility functions{"\n"}
+              layout{"\n"}│ │ ├── page.tsx # Home page{"\n"}│ │ └── favicon.ico
+              # Favicon{"\n"}│ └── lib/ # Utility functions{"\n"}│ └── utils.ts
+              # Class name utility{"\n"}
+              ├── test/ # Vitest and Testing Library tests{"\n"}│ ├──
+              home.test.tsx # Example test for Home page{"\n"}│ └── setup.ts #
+              Test setup file{"\n"}
               ├── .gitignore # Git ignore file{"\n"}
               ├── biome.json # Biome configuration{"\n"}
               ├── components.json # UI components configuration{"\n"}
               ├── lefthook.yml # Git hooks configuration{"\n"}
               ├── next.config.ts # Next.js configuration{"\n"}
+              ├── next-env.d.ts # Next.js type definitions{"\n"}
               ├── package.json # Project dependencies and scripts{"\n"}
+              ├── pnpm-lock.yaml # Lockfile for pnpm{"\n"}
+              ├── pnpm-workspace.yaml # pnpm workspace configuration{"\n"}
               ├── postcss.config.mjs # PostCSS configuration{"\n"}
               ├── README.md # Project documentation{"\n"}
-              └── tsconfig.json # TypeScript configuration
+              ├── tsconfig.json # TypeScript configuration{"\n"}
+              ├── vitest.config.ts # Vitest configuration{"\n"}
+              └── .nvmrc # Node version
             </code>
           </pre>
 
@@ -291,6 +336,22 @@ export default function Home() {
                 className="text-blue-600 hover:underline"
               >
                 Lefthook
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://vitest.dev/"
+                className="text-blue-600 hover:underline"
+              >
+                Vitest
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://testing-library.com/docs/react-testing-library/intro/"
+                className="text-blue-600 hover:underline"
+              >
+                @testing-library/react
               </a>
             </li>
           </ul>

@@ -1,5 +1,7 @@
 # Degu IO Boilerplate: NextJS with Biome, Lefthook and TailwindCSS
 
+![CodeRabbit Pull Request Reviews](https://img.shields.io/coderabbit/prs/github/degu-io/nextjs-biome-boilerplate?utm_source=oss&utm_medium=github&utm_campaign=degu-io%2Fnextjs-biome-boilerplate&labelColor=171717&color=FF570A&link=https%3A%2F%2Fcoderabbit.ai&label=CodeRabbit+Reviews)
+
 A modern, feature-rich boilerplate for NextJS applications with built-in linting, formatting, and styling solutions.
 
 ## Features
@@ -13,12 +15,14 @@ A modern, feature-rich boilerplate for NextJS applications with built-in linting
 - **[PNPM](https://pnpm.io/)** - Fast, disk space efficient package manager
 - **[Turbopack](https://turbo.build/pack)** - Incremental bundler for development
 - **[Geist Fonts](https://vercel.com/font/geist)** - Beautiful, modern typeface by Vercel
+- **[Vitest](https://vitest.dev/)** - Fast unit/integration testing framework
+- **[@testing-library/react](https://testing-library.com/docs/react-testing-library/intro/)** - Simple and complete React DOM testing utilities
 
 ## Getting Started
 
 ### Prerequisites
 
-- [Node.js](https://nodejs.org/) (v18 or newer)
+- [Node.js](https://nodejs.org/) (v22 or newer)
 - [PNPM](https://pnpm.io/) (v10 or newer)
 
 ### Installation
@@ -77,26 +81,58 @@ pnpm lint
 pnpm lint:fix
 ```
 
+### Testing
+
+Run tests with Vitest and @testing-library/react:
+
+```bash
+pnpm test
+```
+
+For the interactive UI:
+
+```bash
+pnpm test:ui
+```
+
+To check coverage:
+
+```bash
+pnpm test:coverage
+```
+
+Test files are located in the `test/` directory. See `test/home.test.tsx` for an example.
+
 ## Project Structure
 
-```
+```shell
 nextjs_boilerplate/
-├── public/              # Static assets
+├── public/                # Static assets
 ├── src/
-│   ├── app/             # App router pages and layouts
-│   │   ├── globals.css  # Global styles
-│   │   ├── layout.tsx   # Root layout
-│   │   └── page.tsx     # Home page
-│   └── lib/             # Utility functions
-├── .gitignore           # Git ignore file
-├── biome.json           # Biome configuration
-├── components.json      # UI components configuration
-├── lefthook.yml         # Git hooks configuration
-├── next.config.ts       # Next.js configuration
-├── package.json         # Project dependencies and scripts
-├── postcss.config.mjs   # PostCSS configuration
-├── README.md            # Project documentation
-└── tsconfig.json        # TypeScript configuration
+│   ├── app/               # App router pages and layouts
+│   │   ├── globals.css    # Global styles
+│   │   ├── layout.tsx     # Root layout
+│   │   ├── page.tsx       # Home page
+│   │   └── favicon.ico    # Favicon
+│   └── lib/               # Utility functions
+│       └── utils.ts       # Class name utility
+├── test/                  # Vitest and Testing Library tests
+│   ├── home.test.tsx      # Example test for Home page
+│   └── setup.ts           # Test setup file
+├── .gitignore             # Git ignore file
+├── biome.json             # Biome configuration
+├── components.json        # UI components configuration
+├── lefthook.yml           # Git hooks configuration
+├── next.config.ts         # Next.js configuration
+├── next-env.d.ts          # Next.js type definitions
+├── package.json           # Project dependencies and scripts
+├── pnpm-lock.yaml         # Lockfile for pnpm
+├── pnpm-workspace.yaml    # pnpm workspace configuration
+├── postcss.config.mjs     # PostCSS configuration
+├── README.md              # Project documentation
+├── tsconfig.json          # TypeScript configuration
+├── vitest.config.ts       # Vitest configuration
+└── .nvmrc                 # Node version
 ```
 
 ## Git Hooks
@@ -138,3 +174,5 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - [TailwindCSS](https://tailwindcss.com/)
 - [Biome](https://biomejs.dev/)
 - [Lefthook](https://github.com/evilmartians/lefthook)
+- [Vitest](https://vitest.dev/)
+- [@testing-library/react](https://testing-library.com/docs/react-testing-library/intro/)
