@@ -105,7 +105,7 @@ Test files are located in the `test/` directory. See `test/home.test.tsx` for an
 
 ## Project Structure
 
-```
+```shell
 nextjs_boilerplate/
 ├── public/                # Static assets
 ├── src/
