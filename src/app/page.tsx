@@ -43,15 +43,14 @@ export default function Home() {
               <strong>TailwindCSS 4</strong> - A utility-first CSS framework
             </li>
             <li>
-              <strong>Biome</strong> - Fast linter and formatter for
-              JavaScript, TypeScript, JSX, and more
+              <strong>Biome</strong> - Fast linter and formatter for JavaScript,
+              TypeScript, JSX, and more
             </li>
             <li>
               <strong>Lefthook</strong> - Git hooks manager
             </li>
             <li>
-              <strong>PNPM</strong> - Fast, disk space efficient package
-              manager
+              <strong>PNPM</strong> - Fast, disk space efficient package manager
             </li>
             <li>
               <strong>Turbopack</strong> - Incremental bundler for development
@@ -73,7 +72,7 @@ export default function Home() {
               >
                 Node.js
               </a>{" "}
-              (v18 or newer)
+              (v22 or newer)
             </li>
             <li>
               <a
@@ -168,8 +167,8 @@ export default function Home() {
               ├── public/ # Static assets{"\n"}
               ├── src/{"\n"}│ ├── app/ # App router pages and layouts{"\n"}│ │
               ├── globals.css # Global styles{"\n"}│ │ ├── layout.tsx # Root
-              layout{"\n"}│ │ └── page.tsx # Home page{"\n"}│ └── lib/ #
-              Utility functions{"\n"}
+              layout{"\n"}│ │ └── page.tsx # Home page{"\n"}│ └── lib/ # Utility
+              functions{"\n"}
               ├── .gitignore # Git ignore file{"\n"}
               ├── biome.json # Biome configuration{"\n"}
               ├── components.json # UI components configuration{"\n"}

@@ -18,7 +18,7 @@ A modern, feature-rich boilerplate for NextJS applications with built-in linting
 
 ### Prerequisites
 
-- [Node.js](https://nodejs.org/) (v18 or newer)
+- [Node.js](https://nodejs.org/) (v22 or newer)
 - [PNPM](https://pnpm.io/) (v10 or newer)
 
 ### Installation
