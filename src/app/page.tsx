@@ -28,7 +28,7 @@ export default function Home() {
           </p>
 
           <h2 className="text-2xl font-bold mt-8 mb-4">Features</h2>
-          <ul className="list-disc pl-6 space-y-2">
+          <ul className="list-disc pl-6 space-y-2" data-testid="features">
             <li>
               <strong>Next.js 15</strong> - The React framework for production
             </li>
