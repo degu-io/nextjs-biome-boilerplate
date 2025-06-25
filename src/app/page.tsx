@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { useRef } from "react";
 import { ThemeSwitcher } from "@/components/theme-switcher";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -17,35 +20,66 @@ import { Separator } from "@/components/ui/separator";
  * @returns The complete homepage layout as a React element.
  */
 export default function Home() {
+  const gettingStartedRef = useRef<HTMLDivElement>(null);
+
   return (
-    <div className="grid grid-rows-[auto_1fr_auto] items-center min-h-screen p-8 pb-20 gap-8 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <header className="w-full max-w-4xl mx-auto flex flex-col items-start gap-4 mb-4">
-        <div className="flex items-center justify-between w-full">
-          <div className="flex items-center gap-4">
-            <h1 className="text-3xl font-bold">Degu IO Boilerplate</h1>
-            <Button variant="link" asChild>
-              <a
-                href="https://degu.io"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                degu.io →
-              </a>
-            </Button>
-          </div>
+    <div className="grid grid-rows-[auto_1fr_auto] items-center min-h-screen p-4 pb-16 gap-6 sm:p-8 sm:pb-20 sm:gap-8 lg:p-20 font-[family-name:var(--font-geist-sans)]">
+      <header className="w-full max-w-4xl mx-auto flex flex-col items-start gap-4 mb-2 sm:mb-4">
+        <div className="flex items-start justify-between w-full">
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight">
+            Degu IO Boilerplate
+          </h1>
           <ThemeSwitcher />
         </div>
-        <p className="text-lg text-gray-600 dark:text-gray-300">
+        <Button
+          variant="link"
+          size="sm"
+          asChild
+          className="text-sm sm:text-base -mt-2 sm:-mt-0"
+        >
+          <a
+            href="https://degu.io"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="whitespace-nowrap"
+          >
+            degu.io →
+          </a>
+        </Button>
+        <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
           NextJS with Biome, Lefthook and TailwindCSS
         </p>
-        <div className="flex gap-2 flex-wrap">
-          <Button>Get Started</Button>
-          <Button variant="outline">Learn More</Button>
+        <div className="flex gap-3 flex-wrap w-full sm:w-auto">
+          <Button
+            size="lg"
+            className="flex-1 sm:flex-none min-h-[44px]"
+            onClick={() => {
+              gettingStartedRef.current?.scrollIntoView({
+                behavior: "smooth",
+              });
+            }}
+          >
+            Get Started
+          </Button>
+          <Button
+            variant="outline"
+            size="lg"
+            className="flex-1 sm:flex-none min-h-[44px]"
+            asChild
+          >
+            <a
+              href="https://github.com/degu-io/nextjs-biome-boilerplate"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Learn More
+            </a>
+          </Button>
         </div>
       </header>
 
       <main className="w-full max-w-4xl mx-auto overflow-y-auto">
-        <div className="space-y-8">
+        <div className="space-y-6 sm:space-y-8">
           <Card>
             <CardHeader>
               <CardTitle>Modern Next.js Boilerplate</CardTitle>
@@ -59,23 +93,44 @@ export default function Home() {
           <Separator data-testid="features-separator" />
 
           <Card data-testid="features-card">
-            <CardHeader>
-              <CardTitle className="text-2xl">Features</CardTitle>
+            <CardHeader className="pb-4 sm:pb-6">
+              <CardTitle className="text-xl sm:text-2xl">Features</CardTitle>
             </CardHeader>
-            <CardContent>
-              <div className="space-y-4">
-                <div className="flex flex-wrap gap-2">
-                  <Badge variant="default">Next.js 15</Badge>
-                  <Badge variant="secondary">React 19</Badge>
-                  <Badge variant="outline">TypeScript</Badge>
-                  <Badge variant="secondary">TailwindCSS 4</Badge>
-                  <Badge variant="outline">Biome</Badge>
-                  <Badge variant="secondary">Lefthook</Badge>
-                  <Badge variant="outline">PNPM</Badge>
-                  <Badge variant="secondary">Turbopack</Badge>
-                  <Badge variant="outline">Vitest</Badge>
+            <CardContent className="pt-0">
+              <div className="space-y-4 sm:space-y-6">
+                <div className="flex flex-wrap gap-2 sm:gap-3">
+                  <Badge variant="default" className="text-xs sm:text-sm">
+                    Next.js 15
+                  </Badge>
+                  <Badge variant="secondary" className="text-xs sm:text-sm">
+                    React 19
+                  </Badge>
+                  <Badge variant="outline" className="text-xs sm:text-sm">
+                    TypeScript
+                  </Badge>
+                  <Badge variant="secondary" className="text-xs sm:text-sm">
+                    TailwindCSS 4
+                  </Badge>
+                  <Badge variant="outline" className="text-xs sm:text-sm">
+                    Biome
+                  </Badge>
+                  <Badge variant="secondary" className="text-xs sm:text-sm">
+                    Lefthook
+                  </Badge>
+                  <Badge variant="outline" className="text-xs sm:text-sm">
+                    PNPM
+                  </Badge>
+                  <Badge variant="secondary" className="text-xs sm:text-sm">
+                    Turbopack
+                  </Badge>
+                  <Badge variant="outline" className="text-xs sm:text-sm">
+                    Vitest
+                  </Badge>
                 </div>
-                <ul className="list-disc pl-6 space-y-2" data-testid="features">
+                <ul
+                  className="list-disc pl-4 sm:pl-6 space-y-2 sm:space-y-3 text-sm sm:text-base"
+                  data-testid="features"
+                >
                   <li>
                     <strong>Next.js 15</strong> - The React framework for
                     production
@@ -126,14 +181,18 @@ export default function Home() {
 
           <Separator />
 
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-2xl">Getting Started</CardTitle>
+          <Card ref={gettingStartedRef}>
+            <CardHeader className="pb-4 sm:pb-6">
+              <CardTitle className="text-xl sm:text-2xl">
+                Getting Started
+              </CardTitle>
             </CardHeader>
-            <CardContent className="space-y-4">
+            <CardContent className="space-y-4 sm:space-y-6 pt-0">
               <div>
-                <h3 className="text-xl font-semibold mb-3">Prerequisites</h3>
-                <ul className="list-disc pl-6 space-y-2">
+                <h3 className="text-lg sm:text-xl font-semibold mb-3">
+                  Prerequisites
+                </h3>
+                <ul className="list-disc pl-4 sm:pl-6 space-y-2 text-sm sm:text-base">
                   <li>
                     <a
                       href="https://nodejs.org/"
@@ -156,44 +215,65 @@ export default function Home() {
               </div>
 
               <div>
-                <h3 className="text-xl font-semibold mb-3">Installation</h3>
+                <h3 className="text-lg sm:text-xl font-semibold mb-3">
+                  Installation
+                </h3>
 
-                <h4 className="text-lg font-medium mb-2">
-                  Option 1: Clone the repository
+                <h4 className="text-base sm:text-lg font-medium mb-2">
+                  Option 1: Using GitHub Template (Recommended)
                 </h4>
-                <pre className="bg-gray-100 dark:bg-gray-800 p-4 rounded-md overflow-x-auto">
-                  <code className="font-mono text-sm">
-                    git clone
-                    https://github.com/yourusername/nextjs_boilerplate.git
+                <p className="text-sm sm:text-base mb-3">
+                  Click the "Use this template" button on the{" "}
+                  <a
+                    href="https://github.com/degu-io/nextjs-biome-boilerplate"
+                    className="text-blue-600 hover:underline"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    GitHub repository
+                  </a>{" "}
+                  to create your own copy, then clone it:
+                </p>
+                <pre className="bg-gray-100 dark:bg-gray-800 p-3 sm:p-4 rounded-md overflow-x-auto">
+                  <code className="font-mono text-xs sm:text-sm">
+                    git clone https://github.com/yourusername/your-repo-name.git
                     my-project{"\n"}
                     cd my-project{"\n"}
                     pnpm install
                   </code>
                 </pre>
 
-                <h4 className="text-lg font-medium mt-4 mb-2">
-                  Option 2: Using degit
+                <h4 className="text-base sm:text-lg font-medium mt-4 mb-2">
+                  Option 2: Clone the repository
                 </h4>
-                <pre className="bg-gray-100 dark:bg-gray-800 p-4 rounded-md overflow-x-auto">
-                  <code className="font-mono text-sm">
-                    npx degit yourusername/nextjs_boilerplate my-project{"\n"}
+                <pre className="bg-gray-100 dark:bg-gray-800 p-3 sm:p-4 rounded-md overflow-x-auto">
+                  <code className="font-mono text-xs sm:text-sm">
+                    git clone --depth=1
+                    https://github.com/degu-io/nextjs-biome-boilerplate.git
+                    my-project{"\n"}
                     cd my-project{"\n"}
+                    rm -rf .git{"\n"}
+                    git init{"\n"}
                     pnpm install
                   </code>
                 </pre>
               </div>
 
               <div>
-                <h3 className="text-xl font-semibold mb-3">Development</h3>
-                <p>Start the development server with Turbopack:</p>
-                <pre className="bg-gray-100 dark:bg-gray-800 p-4 rounded-md overflow-x-auto">
-                  <code className="font-mono text-sm">pnpm dev</code>
+                <h3 className="text-lg sm:text-xl font-semibold mb-3">
+                  Development
+                </h3>
+                <p className="text-sm sm:text-base mb-3">
+                  Start the development server with Turbopack:
+                </p>
+                <pre className="bg-gray-100 dark:bg-gray-800 p-3 sm:p-4 rounded-md overflow-x-auto">
+                  <code className="font-mono text-xs sm:text-sm">pnpm dev</code>
                 </pre>
-                <p>
+                <p className="text-sm sm:text-base">
                   Your application will be available at{" "}
                   <a
                     href="http://localhost:3000"
-                    className="text-blue-600 hover:underline"
+                    className="text-blue-600 hover:underline break-all"
                   >
                     http://localhost:3000
                   </a>
@@ -206,12 +286,14 @@ export default function Home() {
           <Separator />
 
           <Card>
-            <CardHeader>
-              <CardTitle className="text-2xl">Project Structure</CardTitle>
+            <CardHeader className="pb-4 sm:pb-6">
+              <CardTitle className="text-xl sm:text-2xl">
+                Project Structure
+              </CardTitle>
             </CardHeader>
-            <CardContent>
-              <pre className="bg-gray-100 dark:bg-gray-800 p-4 rounded-md overflow-x-auto">
-                <code className="font-mono text-sm">
+            <CardContent className="pt-0">
+              <pre className="bg-gray-100 dark:bg-gray-800 p-3 sm:p-4 rounded-md overflow-x-auto">
+                <code className="font-mono text-xs sm:text-sm">
                   nextjs_boilerplate/{"\n"}
                   ├── public/ # Static assets{"\n"}
                   ├── src/{"\n"}│ ├── app/ # App router pages and layouts{"\n"}│
@@ -242,11 +324,13 @@ export default function Home() {
           <Separator />
 
           <Card>
-            <CardHeader>
-              <CardTitle className="text-2xl">Acknowledgments</CardTitle>
+            <CardHeader className="pb-4 sm:pb-6">
+              <CardTitle className="text-xl sm:text-2xl">
+                Acknowledgments
+              </CardTitle>
             </CardHeader>
-            <CardContent>
-              <ul className="list-disc pl-6 space-y-2">
+            <CardContent className="pt-0">
+              <ul className="list-disc pl-4 sm:pl-6 space-y-2 sm:space-y-3 text-sm sm:text-base">
                 <li>
                   <a
                     href="https://nextjs.org/"
@@ -301,7 +385,7 @@ export default function Home() {
         </div>
       </main>
 
-      <footer className="w-full max-w-4xl mx-auto mt-8 flex gap-6 flex-wrap items-center justify-center">
+      <footer className="w-full max-w-4xl mx-auto mt-6 sm:mt-8 flex gap-4 sm:gap-6 flex-wrap items-center justify-center text-sm sm:text-base">
         <a
           className="flex items-center gap-2 hover:underline hover:underline-offset-4"
           href="https://degu.io"

@@ -19,7 +19,7 @@ describe("LandingPage", () => {
 
 	it("should render shadcn Button components", () => {
 		render(<Home />);
-		expect(screen.getByRole("button", { name: /learn more/i })).toBeInTheDocument();
+		expect(screen.getByRole("link", { name: /learn more/i })).toBeInTheDocument();
 		expect(screen.getByRole("button", { name: /get started/i })).toBeInTheDocument();
 	});
 
@@ -30,12 +30,16 @@ describe("LandingPage", () => {
 		expect(screen.getAllByText("TypeScript")).toHaveLength(2);
 	});
 
-	it("should have interactive buttons", async () => {
+	it("should have interactive buttons and links", async () => {
 		const user = userEvent.setup();
 		render(<Home />);
 		
-		const learnMoreButton = screen.getByRole("button", { name: /learn more/i });
-		await user.click(learnMoreButton);
+		const learnMoreLink = screen.getByRole("link", { name: /learn more/i });
+		expect(learnMoreLink).toHaveAttribute("href", "https://github.com/degu-io/nextjs-biome-boilerplate");
+		expect(learnMoreLink).toHaveAttribute("target", "_blank");
+		
+		const getStartedButton = screen.getByRole("button", { name: /get started/i });
+		await user.click(getStartedButton);
 		// Button should be clickable without throwing
 	});
 
