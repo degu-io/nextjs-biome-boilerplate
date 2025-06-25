@@ -1,8 +1,8 @@
-# Degu IO Boilerplate: NextJS with Biome, Lefthook and TailwindCSS
+# Degu IO Boilerplate: Next.js with Biome, Lefthook and TailwindCSS
 
 ![CodeRabbit Pull Request Reviews](https://img.shields.io/coderabbit/prs/github/degu-io/nextjs-biome-boilerplate?utm_source=oss&utm_medium=github&utm_campaign=degu-io%2Fnextjs-biome-boilerplate&labelColor=171717&color=FF570A&link=https%3A%2F%2Fcoderabbit.ai&label=CodeRabbit+Reviews)
 
-A modern, feature-rich boilerplate for NextJS applications with built-in linting, formatting, and styling solutions.
+A modern, feature-rich boilerplate for Next.js applications with built-in linting, formatting, styling solutions, and dark/light theme support.
 
 ## Features
 
@@ -10,6 +10,8 @@ A modern, feature-rich boilerplate for NextJS applications with built-in linting
 - **[React 19](https://react.dev/)** - The library for web and native user interfaces
 - **[TypeScript](https://www.typescriptlang.org/)** - JavaScript with syntax for types
 - **[TailwindCSS 4](https://tailwindcss.com/)** - A utility-first CSS framework
+- **[shadcn/ui](https://ui.shadcn.com/)** - Beautifully designed components built with Radix UI and Tailwind CSS
+- **[next-themes](https://github.com/pacocoursey/next-themes)** - Perfect dark mode for Next.js
 - **[Biome](https://biomejs.dev/)** - Fast linter and formatter for JavaScript, TypeScript, JSX, and more
 - **[Lefthook](https://github.com/evilmartians/lefthook)** - Git hooks manager
 - **[PNPM](https://pnpm.io/)** - Fast, disk space efficient package manager
@@ -27,26 +29,26 @@ A modern, feature-rich boilerplate for NextJS applications with built-in linting
 
 ### Installation
 
-#### Option 1: Clone the repository
+#### Option 1: Using GitHub Template (Recommended)
+
+1. Click the "Use this template" button on the [GitHub repository](https://github.com/degu-io/nextjs-biome-boilerplate)
+2. Create a new repository from the template
+3. Clone your new repository:
 
 ```bash
-git clone https://github.com/degu-io/nextjs_boilerplate.git my-project
+git clone --depth=1 https://github.com/yourusername/your-repo-name.git my-project
 cd my-project
 pnpm install
 ```
 
-#### Option 2: Using degit
+#### Option 2: Clone the repository
 
 ```bash
-npx degit degu-io/nextjs_boilerplate my-project
+git clone --depth=1 https://github.com/degu-io/nextjs-biome-boilerplate.git my-project
 cd my-project
+rm -rf .git
+git init
 pnpm install
-```
-
-#### Option 3: Using the template directly
-
-```bash
-pnpm create next-app --example https://github.com/degu-io/nextjs_boilerplate my-project
 ```
 
 ### Development
@@ -114,6 +116,10 @@ nextjs_boilerplate/
 │   │   ├── layout.tsx     # Root layout
 │   │   ├── page.tsx       # Home page
 │   │   └── favicon.ico    # Favicon
+│   ├── components/        # React components
+│   │   ├── ui/            # shadcn/ui components
+│   │   ├── theme-provider.tsx # Theme provider wrapper
+│   │   └── theme-switcher.tsx # Dark/light mode toggle
 │   └── lib/               # Utility functions
 │       └── utils.ts       # Class name utility
 ├── test/                  # Vitest and Testing Library tests
@@ -172,6 +178,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 - [Next.js](https://nextjs.org/)
 - [TailwindCSS](https://tailwindcss.com/)
+- [shadcn/ui](https://ui.shadcn.com/)
 - [Biome](https://biomejs.dev/)
 - [Lefthook](https://github.com/evilmartians/lefthook)
 - [Vitest](https://vitest.dev/)
