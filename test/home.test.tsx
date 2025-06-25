@@ -43,4 +43,21 @@ describe("LandingPage", () => {
 		render(<Home />);
 		expect(screen.getByTestId("features-separator")).toBeInTheDocument();
 	});
+
+	it("should render theme switcher button", () => {
+		render(<Home />);
+		expect(screen.getByRole("button", { name: /toggle theme/i })).toBeInTheDocument();
+	});
+
+	it("should open theme switcher dropdown when clicked", async () => {
+		const user = userEvent.setup();
+		render(<Home />);
+		
+		const themeSwitcher = screen.getByRole("button", { name: /toggle theme/i });
+		await user.click(themeSwitcher);
+		
+		expect(screen.getByText("Light")).toBeInTheDocument();
+		expect(screen.getByText("Dark")).toBeInTheDocument();
+		expect(screen.getByText("System")).toBeInTheDocument();
+	});
 });

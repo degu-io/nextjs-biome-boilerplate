@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { ThemeSwitcher } from "@/components/theme-switcher";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
@@ -18,14 +19,21 @@ import { Separator } from "@/components/ui/separator";
 export default function Home() {
   return (
     <div className="grid grid-rows-[auto_1fr_auto] items-center min-h-screen p-8 pb-20 gap-8 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <header className="w-full flex flex-col items-center sm:items-start gap-4 mb-4">
-        <div className="flex items-center gap-4">
-          <h1 className="text-3xl font-bold">Degu IO Boilerplate</h1>
-          <Button variant="link" asChild>
-            <a href="https://degu.io" target="_blank" rel="noopener noreferrer">
-              degu.io →
-            </a>
-          </Button>
+      <header className="w-full max-w-4xl mx-auto flex flex-col items-start gap-4 mb-4">
+        <div className="flex items-center justify-between w-full">
+          <div className="flex items-center gap-4">
+            <h1 className="text-3xl font-bold">Degu IO Boilerplate</h1>
+            <Button variant="link" asChild>
+              <a
+                href="https://degu.io"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                degu.io →
+              </a>
+            </Button>
+          </div>
+          <ThemeSwitcher />
         </div>
         <p className="text-lg text-gray-600 dark:text-gray-300">
           NextJS with Biome, Lefthook and TailwindCSS
@@ -293,7 +301,7 @@ export default function Home() {
         </div>
       </main>
 
-      <footer className="w-full mt-8 flex gap-6 flex-wrap items-center justify-center">
+      <footer className="w-full max-w-4xl mx-auto mt-8 flex gap-6 flex-wrap items-center justify-center">
         <a
           className="flex items-center gap-2 hover:underline hover:underline-offset-4"
           href="https://degu.io"
