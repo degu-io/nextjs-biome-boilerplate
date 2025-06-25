@@ -47,7 +47,7 @@ export default function Home() {
           </a>
         </Button>
         <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
-          NextJS with Biome, Lefthook and TailwindCSS
+          Next.js with Biome, Lefthook, TailwindCSS and shadcn/ui
         </p>
         <div className="flex gap-3 flex-wrap w-full sm:w-auto">
           <Button
@@ -84,7 +84,7 @@ export default function Home() {
             <CardHeader>
               <CardTitle>Modern Next.js Boilerplate</CardTitle>
               <CardDescription>
-                A modern, feature-rich boilerplate for NextJS applications with
+                A modern, feature-rich boilerplate for Next.js applications with
                 built-in linting, formatting, and styling solutions.
               </CardDescription>
             </CardHeader>
@@ -146,6 +146,13 @@ export default function Home() {
                   <li>
                     <strong>TailwindCSS 4</strong> - A utility-first CSS
                     framework
+                  </li>
+                  <li>
+                    <strong>shadcn/ui</strong> - Beautifully designed components
+                    built with Radix UI and Tailwind CSS
+                  </li>
+                  <li>
+                    <strong>next-themes</strong> - Perfect dark mode in Next.js
                   </li>
                   <li>
                     <strong>Biome</strong> - Fast linter and formatter for
@@ -353,6 +360,14 @@ export default function Home() {
                     className="text-blue-600 hover:underline"
                   >
                     Biome
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://ui.shadcn.com/"
+                    className="text-blue-600 hover:underline"
+                  >
+                    shadcn/ui
                   </a>
                 </li>
                 <li>

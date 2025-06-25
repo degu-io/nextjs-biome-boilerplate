@@ -1,8 +1,8 @@
-# Degu IO Boilerplate: NextJS with Biome, Lefthook and TailwindCSS
+# Degu IO Boilerplate: Next.js with Biome, Lefthook and TailwindCSS
 
 ![CodeRabbit Pull Request Reviews](https://img.shields.io/coderabbit/prs/github/degu-io/nextjs-biome-boilerplate?utm_source=oss&utm_medium=github&utm_campaign=degu-io%2Fnextjs-biome-boilerplate&labelColor=171717&color=FF570A&link=https%3A%2F%2Fcoderabbit.ai&label=CodeRabbit+Reviews)
 
-A modern, feature-rich boilerplate for NextJS applications with built-in linting, formatting, styling solutions, and dark/light theme support.
+A modern, feature-rich boilerplate for Next.js applications with built-in linting, formatting, styling solutions, and dark/light theme support.
 
 ## Features
 
@@ -178,6 +178,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 - [Next.js](https://nextjs.org/)
 - [TailwindCSS](https://tailwindcss.com/)
+- [shadcn/ui](https://ui.shadcn.com/)
 - [Biome](https://biomejs.dev/)
 - [Lefthook](https://github.com/evilmartians/lefthook)
 - [Vitest](https://vitest.dev/)

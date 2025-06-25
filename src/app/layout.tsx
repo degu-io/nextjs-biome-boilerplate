@@ -15,13 +15,13 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Degu IO Boilerplate",
-  description: "NextJS with Biome, Lefthook and TailwindCSS/Shadcn UI",
+  description: "Next.js with Biome, Lefthook and TailwindCSS/Shadcn UI",
 };
 
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  maximumScale: 1,
+  maximumScale: 5,
 };
 
 export default function RootLayout({
