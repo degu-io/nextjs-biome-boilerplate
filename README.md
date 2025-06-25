@@ -11,7 +11,7 @@ A modern, feature-rich boilerplate for Next.js applications with built-in lintin
 - **[TypeScript](https://www.typescriptlang.org/)** - JavaScript with syntax for types
 - **[TailwindCSS 4](https://tailwindcss.com/)** - A utility-first CSS framework
 - **[shadcn/ui](https://ui.shadcn.com/)** - Beautifully designed components built with Radix UI and Tailwind CSS
-- **[next-themes](https://github.com/pacocoursey/next-themes)** - Perfect dark mode in Next.js
+- **[next-themes](https://github.com/pacocoursey/next-themes)** - Perfect dark mode for Next.js
 - **[Biome](https://biomejs.dev/)** - Fast linter and formatter for JavaScript, TypeScript, JSX, and more
 - **[Lefthook](https://github.com/evilmartians/lefthook)** - Git hooks manager
 - **[PNPM](https://pnpm.io/)** - Fast, disk space efficient package manager
@@ -36,7 +36,7 @@ A modern, feature-rich boilerplate for Next.js applications with built-in lintin
 3. Clone your new repository:
 
 ```bash
-git clone https://github.com/yourusername/your-repo-name.git my-project
+git clone --depth=1 https://github.com/yourusername/your-repo-name.git my-project
 cd my-project
 pnpm install
 ```
