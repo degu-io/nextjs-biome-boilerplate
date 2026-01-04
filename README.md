@@ -6,18 +6,18 @@ A modern, feature-rich boilerplate for Next.js applications with built-in lintin
 
 ## Features
 
-- **[Next.js 15](https://nextjs.org/)** - The React framework for production
+- **[Next.js 16](https://nextjs.org/)** - The React framework for production
 - **[React 19](https://react.dev/)** - The library for web and native user interfaces
-- **[TypeScript](https://www.typescriptlang.org/)** - JavaScript with syntax for types
+- **[TypeScript 5](https://www.typescriptlang.org/)** - JavaScript with syntax for types
 - **[TailwindCSS 4](https://tailwindcss.com/)** - A utility-first CSS framework
 - **[shadcn/ui](https://ui.shadcn.com/)** - Beautifully designed components built with Radix UI and Tailwind CSS
 - **[next-themes](https://github.com/pacocoursey/next-themes)** - Perfect dark mode for Next.js
-- **[Biome](https://biomejs.dev/)** - Fast linter and formatter for JavaScript, TypeScript, JSX, and more
+- **[Biome 2.3](https://biomejs.dev/)** - Fast linter and formatter for JavaScript, TypeScript, JSX, CSS, and more
 - **[Lefthook](https://github.com/evilmartians/lefthook)** - Git hooks manager
-- **[PNPM](https://pnpm.io/)** - Fast, disk space efficient package manager
+- **[PNPM 10](https://pnpm.io/)** - Fast, disk space efficient package manager
 - **[Turbopack](https://turbo.build/pack)** - Incremental bundler for development
 - **[Geist Fonts](https://vercel.com/font/geist)** - Beautiful, modern typeface by Vercel
-- **[Vitest](https://vitest.dev/)** - Fast unit/integration testing framework
+- **[Vitest 4](https://vitest.dev/)** - Fast unit/integration testing framework
 - **[@testing-library/react](https://testing-library.com/docs/react-testing-library/intro/)** - Simple and complete React DOM testing utilities
 
 ## Getting Started
@@ -73,13 +73,15 @@ pnpm build
 pnpm start
 ```
 
-### Linting
+### Linting and Formatting
+
+Biome handles both linting and formatting:
 
 ```bash
-# Check for linting issues
+# Check for linting and formatting issues
 pnpm lint
 
-# Fix linting issues
+# Fix linting and formatting issues automatically
 pnpm lint:fix
 ```
 
@@ -145,8 +147,8 @@ nextjs_boilerplate/
 
 This boilerplate uses Lefthook to manage Git hooks:
 
-- **pre-commit**: Automatically formats and lints staged files using Biome
-- **pre-push**: Checks files for linting issues before pushing
+- **pre-commit**: Runs `biome check --write` on staged files to automatically fix linting and formatting issues
+- **pre-push**: Runs `biome check` to verify code quality and executes all tests with `pnpm test`
 
 ## Customization
 
@@ -156,7 +158,13 @@ The project uses TailwindCSS 4 with a custom configuration. You can modify the t
 
 ### Biome
 
-Biome is configured in `biome.json`. You can adjust linting and formatting rules to match your preferences.
+Biome is configured in `biome.json` with support for:
+- JavaScript/TypeScript linting and formatting
+- CSS and TailwindCSS 4 directives parsing
+- Import organization
+- Strict code quality rules
+
+You can adjust linting and formatting rules to match your preferences.
 
 ### Next.js
 
