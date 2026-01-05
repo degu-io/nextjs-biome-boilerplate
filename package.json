@@ -9,6 +9,7 @@
 		"lint": "biome check .",
 		"lint:fix": "biome check --write .",
 		"test": "vitest",
+		"test:ci": "vitest --run",
 		"test:ui": "vitest --ui",
 		"test:coverage": "vitest run --coverage"
 	},
